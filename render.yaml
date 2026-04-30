@@ -1,0 +1,7 @@
+services:
+  - type: worker
+    name: finance-pro-bot
+    env: docker
+    envVars:
+      - key: VK_TOKEN
+        sync: false

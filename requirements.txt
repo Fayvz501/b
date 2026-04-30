@@ -1,0 +1,6 @@
+vk_api
+pandas
+matplotlib
+weasyprint
+python-dotenv
+numpy
