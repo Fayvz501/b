@@ -1,7 +1,19 @@
 services:
-  - type: worker
-    name: finance-pro-bot
-    env: docker
+  - type: web
+    name: credit-bot
+    runtime: python
+    plan: free
+    region: frankfurt
+    branch: main
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: gunicorn bot:app --workers 1 --threads 4 --timeout 120 --bind 0.0.0.0:$PORT
     envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
       - key: VK_TOKEN
         sync: false
+      - key: VK_GROUP_ID
+        sync: false
+      - key: DB_PATH
+        value: /tmp/state.db
+    healthCheckPath: /health
