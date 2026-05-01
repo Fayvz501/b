@@ -1,6 +1,6 @@
-vk_api
-pandas
-matplotlib
-weasyprint
-python-dotenv
-numpy
+vk_api==11.9.9
+matplotlib==3.8.4
+reportlab==4.2.0
+requests==2.31.0
+Flask==3.0.3
+gunicorn==21.2.0
